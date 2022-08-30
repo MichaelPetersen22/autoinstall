@@ -1,0 +1,9 @@
+firewalld
+visual-studio-code-bin
+ttf-nerd-fonts-symbols
+neovim
+sddm-theme-abstractdark-git
+noto-fonts
+wofi
+wlogout
+mkinitcpio-firmware
