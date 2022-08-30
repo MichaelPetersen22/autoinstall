@@ -45,7 +45,7 @@ Browser() {
 
 Shell() {
     pacman -S --noconfirm fish
-    chsh -S /bin/fish
+    chsh -s /bin/fish
 }
 
 Terminal() {

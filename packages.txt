@@ -12,3 +12,5 @@ discord-canary
 spotify
 nwg-look
 playerctl
+thunderbird
+lutris
