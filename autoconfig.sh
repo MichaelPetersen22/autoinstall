@@ -16,7 +16,7 @@ pre-requisites() {
 }
 
 AUR() {
-    git clone https://aur.archlinux.org/yay-bin.git /tmp/yay
+    sudo -u $username git clone https://aur.archlinux.org/yay-bin.git /tmp/yay
     cd /tmp/yay; makepkg -sci --noconfirm; cd -
 }
 
