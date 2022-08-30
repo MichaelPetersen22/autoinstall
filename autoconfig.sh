@@ -12,7 +12,7 @@ fi
 username=$(logname)
 
 pre-requisites() {
-    pacman -Syyuu --noconfirm --needed git openssh
+    pacman -Syy --noconfirm --needed git openssh
 }
 
 AUR() {
@@ -23,17 +23,17 @@ AUR() {
 Packages() {
     cat ./packages.txt | while read -r line; do
         sudo -u $username echo "Installing $line"
-        sudo -u $username yay -Sy --needed --noconfirm $line 
+        sudo -u $username yay -S --needed --noconfirm $line 
         echo "$line Installed"
     done
 }
 
 Environment() {
-    pacman -Sy sway swaybg swayidle swaylock waybar sddm ranger --noconfirm
+    pacman -S sway swaybg swayidle swaylock waybar sddm ranger --noconfirm
 }
 
 Browser() {
-    pacman -Sy --needed firefox-developer-edition --noconfirm
+    pacman -S --needed firefox-developer-edition --noconfirm
     sudo -u $username timeout 10s firefox-developer-edition --headless --first-startup
     killall "firefox" "firefox-bin" "firefox-developer-edition" || true
 
@@ -44,12 +44,12 @@ Browser() {
 }
 
 Shell() {
-    pacman -Sy --noconfirm fish
+    pacman -S --noconfirm fish
     chsh -S /bin/fish
 }
 
 Terminal() {
-    pacman -Sy --noconfirm tilix
+    pacman -S --noconfirm tilix
 }
 
 Config() {
@@ -66,7 +66,7 @@ Styles() {
 }
 
 GRUB() {
-    pacman -Sy os-prober --noconfirm
+    pacman -S os-prober --noconfirm
     mount /dev/nvme0n1p1 /mnt
     sudo -u $username git clone https://github.com/vinceliuice/grub2-themes /tmp/grub
     cd /tmp/grub; ./install.sh -t tela -i color -s 4k; cd -
