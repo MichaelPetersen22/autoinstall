@@ -42,12 +42,12 @@ Browser() {
 }
 
 Shell() {
-    pacman -Sy fish --noconfirm
+    pacman -Sy --noconfirm fish
     chsh -S /bin/fish
 }
 
 Terminal() {
-
+    pacman -Sy --noconfirm tilix
 }
 
 Config() {
@@ -75,8 +75,8 @@ AUR
 Packages
 Environment
 Browser
-Shell
 Terminal
 Config
 Styles
 GRUB
+Shell
