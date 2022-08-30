@@ -12,7 +12,7 @@ fi
 username=$(logname)
 
 pre-requisites() {
-    pacman -Sy --noconfirm git openssh
+    pacman -Syyuu --noconfirm --needed git openssh
 }
 
 AUR() {
@@ -33,7 +33,7 @@ Environment() {
 }
 
 Browser() {
-    pacman -Sy firefox-developer-edition --noconfirm
+    pacman -Sy --needed firefox-developer-edition --noconfirm
     sudo -u $username timeout 10s firefox-developer-edition --headless --first-startup
     killall "firefox" "firefox-bin" "firefox-developer-edition" || true
 
